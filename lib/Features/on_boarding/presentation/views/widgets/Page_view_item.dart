@@ -24,7 +24,7 @@ class PageViewItem extends StatelessWidget {
             children: [
               Positioned.fill(
                   child: SvgPicture.asset(
-                Assets.imagesPageViewItemBackground1,
+                packGroundImage,
                 fit: BoxFit.fill,
               )),
               Positioned(
@@ -32,7 +32,7 @@ class PageViewItem extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: SvgPicture.asset(
-                  Assets.imagesPageViewItemImage1,
+                  image,
                 ),
               ),
               const Padding(
@@ -42,7 +42,18 @@ class PageViewItem extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
+        SizedBox(
+          height: 65,
+        ),
+        title,
+        SizedBox(
+          height: 24,
+        ),
+        Text(
+          subTitle,
+          textAlign: TextAlign.center,
+        ),
       ],
     );
   }

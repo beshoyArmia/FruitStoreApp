@@ -15,12 +15,28 @@ class OnBoardingPageView extends StatelessWidget {
             subTitle:
                 'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
             title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("مرحبا بك في"),
                 Text("Fruit"),
                 Text("HUB"),
               ],
-            ))
+            )),
+        PageViewItem(
+            image: Assets.imagesPageViewItemImage2,
+            packGroundImage: Assets.imagesPageViewItemBackground2,
+            subTitle:
+                'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
+            title: Text(
+              "أبحث و تسوق",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 23,
+                  fontFamily: "Cairo",
+                  fontWeight: FontWeight.w700,
+                  height: 0),
+            )),
       ],
     );
   }
