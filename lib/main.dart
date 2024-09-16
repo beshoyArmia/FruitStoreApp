@@ -1,3 +1,5 @@
+import 'package:e_commerce/Features/Splash/Presentation/Views/splash_view.dart';
+import 'package:e_commerce/core/helper_function/on_generate_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,8 +12,9 @@ class Fruit_hub extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(),
+    return const MaterialApp(
+      onGenerateRoute: onGenerateRoute,
+      home: SplashView(),
     );
   }
 }
