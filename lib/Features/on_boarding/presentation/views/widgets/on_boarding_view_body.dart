@@ -1,4 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:e_commerce/Features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/Features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
@@ -57,7 +58,11 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           visible: currantestate == 1,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: CustomButton(text: "أبدا الان", onPressed: () {}),
+            child: CustomButton(
+                text: "أبدا الان",
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, LoginView.routeName);
+                }),
           ),
         ),
         const SizedBox(
