@@ -2,8 +2,30 @@ import 'package:e_commerce/Features/on_boarding/presentation/views/widgets/Page_
 import 'package:e_commerce/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
-class OnBoardingPageView extends StatelessWidget {
+class OnBoardingPageView extends StatefulWidget {
   const OnBoardingPageView({super.key});
+
+  @override
+  State<OnBoardingPageView> createState() => _OnBoardingPageViewState();
+}
+
+class _OnBoardingPageViewState extends State<OnBoardingPageView> {
+  late PageController pageController;
+  var currantPage = 0;
+  @override
+  void initState() {
+    pageController = PageController();
+    pageController.addListener(() {
+      currantPage = pageController.page!.round();
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
