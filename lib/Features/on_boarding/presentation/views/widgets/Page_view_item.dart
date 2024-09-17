@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -36,23 +35,25 @@ class PageViewItem extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 35),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 35),
                 child: Text("تخط"),
               ),
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 65,
         ),
         title,
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
-        Text(
-          subTitle,
-          textAlign: TextAlign.center,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            subTitle,
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );
