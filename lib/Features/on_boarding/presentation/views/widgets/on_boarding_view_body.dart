@@ -19,6 +19,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
     pageController = PageController();
     pageController.addListener(() {
       currantestate = pageController.page!.round();
+      setState(() {});
     });
     super.initState();
   }
@@ -44,17 +45,20 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                   activeColor: AppColor.Kpcolor,
                   color: AppColor.Kpcolor.withOpacity(0.5),
                 )
-              : DotsDecorator(
-                  activeColor: const Color.fromARGB(255, 0, 0, 0),
-                  color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+              : const DotsDecorator(
+                  activeColor: AppColor.Kpcolor,
+                  color: AppColor.Kpcolor,
                 ),
         ),
         const SizedBox(
           height: 23,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: CustomButton(text: "أبدا الان", onPressed: () {}),
+        Visibility(
+          visible: currantestate == 1,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: CustomButton(text: "أبدا الان", onPressed: () {}),
+          ),
         ),
         const SizedBox(
           height: 43,
