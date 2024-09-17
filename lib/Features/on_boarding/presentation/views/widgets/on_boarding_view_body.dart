@@ -42,12 +42,12 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           dotsCount: 2,
           decorator: currantestate == 0
               ? DotsDecorator(
-                  activeColor: AppColor.Kpcolor,
-                  color: AppColor.Kpcolor.withOpacity(0.5),
+                  activeColor: AppColor.primaryColor,
+                  color: AppColor.primaryColor.withOpacity(0.5),
                 )
               : const DotsDecorator(
-                  activeColor: AppColor.Kpcolor,
-                  color: AppColor.Kpcolor,
+                  activeColor: AppColor.primaryColor,
+                  color: AppColor.primaryColor,
                 ),
         ),
         const SizedBox(

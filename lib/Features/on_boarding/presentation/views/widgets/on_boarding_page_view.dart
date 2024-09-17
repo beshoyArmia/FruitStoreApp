@@ -1,5 +1,7 @@
 import 'package:e_commerce/Features/on_boarding/presentation/views/widgets/Page_view_item.dart';
+import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/core/utils/app_images.dart';
+import 'package:e_commerce/core/utils/app_textStyle.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPageView extends StatelessWidget {
@@ -10,7 +12,7 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       controller: pageController,
-      children: const [
+      children: [
         PageViewItem(
             isvisible: true,
             image: Assets.imagesPageViewItemImage1,
@@ -20,12 +22,26 @@ class OnBoardingPageView extends StatelessWidget {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("مرحبا بك في"),
-                Text("Fruit"),
-                Text("HUB"),
+                const Text(
+                  "مرحبا بك في",
+                  style: textStyle.bold23,
+                ),
+                const SizedBox(
+                  width: 9,
+                ),
+                Text(
+                  "HUB",
+                  style:
+                      textStyle.bold23.copyWith(color: AppColor.secondryColor),
+                ),
+                Text(
+                  "Fruit",
+                  style:
+                      textStyle.bold23.copyWith(color: AppColor.primaryColor),
+                ),
               ],
             )),
-        PageViewItem(
+        const PageViewItem(
             isvisible: false,
             image: Assets.imagesPageViewItemImage2,
             packGroundImage: Assets.imagesPageViewItemBackground2,
