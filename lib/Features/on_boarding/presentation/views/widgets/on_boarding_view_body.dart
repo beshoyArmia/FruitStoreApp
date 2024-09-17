@@ -18,7 +18,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   void initState() {
     pageController = PageController();
     pageController.addListener(() {
-      currantestate = pageController.page!.toInt();
+      currantestate = pageController.page!.round();
     });
     super.initState();
   }
@@ -39,10 +39,15 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         )),
         DotsIndicator(
           dotsCount: 2,
-          decorator: DotsDecorator(
-            activeColor: AppColor.Kpcolor,
-            color: AppColor.Kpcolor.withOpacity(0.5),
-          ),
+          decorator: currantestate == 0
+              ? DotsDecorator(
+                  activeColor: AppColor.Kpcolor,
+                  color: AppColor.Kpcolor.withOpacity(0.5),
+                )
+              : DotsDecorator(
+                  activeColor: const Color.fromARGB(255, 0, 0, 0),
+                  color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.5),
+                ),
         ),
         const SizedBox(
           height: 23,
