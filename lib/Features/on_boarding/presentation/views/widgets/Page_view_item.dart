@@ -1,4 +1,6 @@
 import 'package:e_commerce/Features/auth/presentation/views/login_view.dart';
+import 'package:e_commerce/core/constant.dart';
+import 'package:e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce/core/utils/app_textStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
@@ -47,9 +49,15 @@ class PageViewItem extends StatelessWidget {
                     onTap: () {
                       Navigator.popAndPushNamed(context, LoginView.routeName);
                     },
-                    child: const Text(
-                      "تخط",
-                      style: textStyle.regular13,
+                    child: GestureDetector(
+                      onTap: () {
+                        SharedPreferencesSingleton.setBool(
+                            key: isOnBordingViewSeenKEY, value: true);
+                      },
+                      child: const Text(
+                        "تخط",
+                        style: textStyle.regular13,
+                      ),
                     ),
                   ),
                 ),

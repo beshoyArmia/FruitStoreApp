@@ -7,7 +7,8 @@ class SharedPreferencesSingleton {
     _instance = await SharedPreferences.getInstance();
   }
 
-  static Future<bool> setBool(String key, bool value) async {
+  static Future<bool> setBool(
+      {required String key, required bool value}) async {
     await _instance.setBool(key, value);
     return value;
   }
