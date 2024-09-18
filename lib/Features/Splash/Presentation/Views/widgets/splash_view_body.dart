@@ -1,4 +1,7 @@
+import 'package:e_commerce/Features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/Features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:e_commerce/core/constant.dart';
+import 'package:e_commerce/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
@@ -14,7 +17,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   @override
   void initState() {
-    excute();
+    excuteNavigatoinLogic();
     super.initState();
   }
 
@@ -34,9 +37,14 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  void excute() {
+  void excuteNavigatoinLogic() {
+    bool seen = SharedPreferencesSingleton.getBool(isOnBordingViewSeenKEY);
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+      if (seen) {
+        Navigator.pushReplacementNamed(context, LoginView.routeName);
+      } else {
+        Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+      }
     });
   }
 }

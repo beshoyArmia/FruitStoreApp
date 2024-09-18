@@ -47,17 +47,14 @@ class PageViewItem extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 35),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.popAndPushNamed(context, LoginView.routeName);
+                      SharedPreferencesSingleton.setBool(
+                          key: isOnBordingViewSeenKEY, value: true);
+                      Navigator.pushReplacementNamed(
+                          context, LoginView.routeName);
                     },
-                    child: GestureDetector(
-                      onTap: () {
-                        SharedPreferencesSingleton.setBool(
-                            key: isOnBordingViewSeenKEY, value: true);
-                      },
-                      child: const Text(
-                        "تخط",
-                        style: textStyle.regular13,
-                      ),
+                    child: const Text(
+                      "تخط",
+                      style: textStyle.regular13,
                     ),
                   ),
                 ),
