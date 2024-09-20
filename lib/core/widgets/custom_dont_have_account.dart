@@ -14,7 +14,7 @@ Row customDontHaveAccount(
         style: textStyle.semibold16.copyWith(color: const Color(0xff949D9E)),
       ),
       GestureDetector(
-        onTap: () {},
+        onTap: onPressed,
         child: Text(
           textButton,
           style: textStyle.semibold16.copyWith(color: AppColor.primaryColor),

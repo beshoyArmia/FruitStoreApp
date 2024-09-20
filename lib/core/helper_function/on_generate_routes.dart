@@ -9,12 +9,13 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case SplashView.routeName:
       return MaterialPageRoute(builder: (context) => const SplashView());
-    case SignupView.routeName:
-      return MaterialPageRoute(builder: (context) => const SignupView());
+
     case OnBoardingView.routeName:
       return MaterialPageRoute(builder: (context) => const OnBoardingView());
     case LoginView.routeName:
       return MaterialPageRoute(builder: (context) => const LoginView());
+    case SignupView.routeName:
+      return MaterialPageRoute(builder: (context) => const SignupView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
