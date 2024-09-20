@@ -1,5 +1,7 @@
+import 'package:e_commerce/Features/auth/presentation/views/widgets/Custom_socila_Login_button.dart';
 import 'package:e_commerce/core/constant.dart';
 import 'package:e_commerce/core/utils/app_color.dart';
+import 'package:e_commerce/core/utils/app_images.dart';
 import 'package:e_commerce/core/utils/app_textStyle.dart';
 import 'package:e_commerce/core/widgets/Custom_Text_form_field.dart';
 import 'package:e_commerce/core/widgets/Custom_or_divider.dart';
@@ -61,7 +63,28 @@ class LoginViewBody extends StatelessWidget {
             const SizedBox(
               height: 33,
             ),
-            customOrWidget()
+            customOrWidget(),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomSocilaLoginButton(
+                onPressed: () {},
+                text: "تسجيل بواسطة جوجل",
+                icon: Assets.imagesGoogleIcon),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomSocilaLoginButton(
+                onPressed: () {},
+                text: "تسجيل بواسطة أبل",
+                icon: Assets.imagesAppleIcon),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomSocilaLoginButton(
+                onPressed: () {},
+                text: "تسجيل بواسطة فيسبوك",
+                icon: Assets.imagesFacebookIcon),
           ],
         ),
       ),
