@@ -1,3 +1,4 @@
+import 'package:e_commerce/Features/auth/presentation/views/signup_view.dart';
 import 'package:e_commerce/Features/auth/presentation/views/widgets/Custom_socila_Login_button.dart';
 import 'package:e_commerce/core/constant.dart';
 import 'package:e_commerce/core/utils/app_color.dart';
@@ -59,7 +60,13 @@ class LoginViewBody extends StatelessWidget {
             const SizedBox(
               height: 33,
             ),
-            customDontHaveAccount(),
+            customDontHaveAccount(
+              text: "لا تمتلك حساب؟",
+              textButton: " قم بإنشاء حساب",
+              onPressed: () {
+                Navigator.pushNamed(context, SignupView.routeName);
+              },
+            ),
             const SizedBox(
               height: 33,
             ),
