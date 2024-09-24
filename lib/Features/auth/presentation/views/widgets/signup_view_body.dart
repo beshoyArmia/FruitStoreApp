@@ -11,10 +11,9 @@ class SignupViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return singlechildScrollView(
+    return SingleChildScrollView(
       child: Padding(
-        padding:
-            const EdgeInsets.symmetric(horizontal: kButtonHorizentalPadding),
+        padding: const EdgeInsets.symmetric(horizontal: kHorizentalPadding),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -24,6 +23,9 @@ class SignupViewBody extends StatelessWidget {
               const CustomTextFormField(
                 textInputType: TextInputType.name,
                 hintText: "الاسم كامل",
+              ),
+              const SizedBox(
+                height: 16,
               ),
               const CustomTextFormField(
                 textInputType: TextInputType.emailAddress,
@@ -70,34 +72,23 @@ class CustomTermsWidget extends StatelessWidget {
         Checkbox(
           value:
               false, // Manage state for this checkbox in your real implementation
-          onChanged: (bool? value) {
+          onChanged: (value) {
             // Handle checkbox state change
           },
         ),
-        Expanded(
-          child: RichText(
-            text: TextSpan(
-              text: 'من خلال إنشاء حساب ، فإنك توافق على ',
-              style: TextStyle(color: Colors.grey),
-              children: <TextSpan>[
-                TextSpan(
-                  text: 'الشروط',
-                  style: TextStyle(color: Colors.green),
-                  // Add a tap gesture recognizer if you want it to be clickable
-                ),
-                TextSpan(
-                  text: ' و',
-                  style: TextStyle(color: Colors.grey),
-                ),
-                TextSpan(
-                  text: 'الأحكام الخاصة بنا',
-                  style: TextStyle(color: Colors.green),
-                  // Add a tap gesture recognizer if you want it to be clickable
-                ),
-              ],
-            ),
-            textDirection:
-                TextDirection.rtl, // This ensures the text aligns right-to-left
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: " من خلال إنشاء حساب ، فإنك توافق على",
+                style: textStyle.semibold13.copyWith(color: Color(0xff949D9E)),
+              ),
+              TextSpan(
+                text: "الشروط والاحكام",
+                style:
+                    textStyle.semibold13.copyWith(color: AppColor.primaryColor),
+              ),
+            ],
           ),
         ),
       ],
